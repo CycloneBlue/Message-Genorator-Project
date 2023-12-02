@@ -53,4 +53,5 @@ function generateQuote() {
   const randomIndex = Math.floor(Math.random() * quotes.length);
   const quoteElement = document.getElementById("quote");
   quoteElement.innerText = quotes[randomIndex];
+  quoteElement.style.fontSize = "24px"; // Change to your desired font size
 }
