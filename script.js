@@ -50,8 +50,13 @@ const quotes = [
 ];
 
 function generateQuote() {
-  const randomIndex = Math.floor(Math.random() * quotes.length);
+  // Shuffle the quotes array using Fisher-Yates algorithm
+  for (let i = quotes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
+  }
+
   const quoteElement = document.getElementById("quote");
-  quoteElement.innerText = quotes[randomIndex];
+  quoteElement.innerText = quotes[0]; // Display the first quote after shuffling
   quoteElement.style.fontSize = "24px"; // Change to your desired font size
 }
