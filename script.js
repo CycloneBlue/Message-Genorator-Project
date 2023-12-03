@@ -68,17 +68,8 @@ function generateQuote() {
   const quoteElement = document.getElementById("quote");
   quoteElement.innerText = newQuote; // Display the new quote
 
-  // Check if the screen width is less than or equal to 480 pixels (mobile devices)
-  if (window.innerWidth <= 480) {
-    // Adjust font size based on the length of the quote
-    if (newQuote.split(" ").length > 16) {
-      quoteElement.style.fontSize = "14px"; // Reduce font size for longer quotes
-    } else {
-      quoteElement.style.fontSize = "16px"; // Default font size for shorter quotes
-    }
-  } else {
-    quoteElement.style.fontSize = "24px"; // Default font size for larger screens
-  }
+  // Set a default font size for both mobile and larger screens
+  quoteElement.style.fontSize = window.innerWidth <= 480 ? "16px" : "24px";
 
   // Update the lastQuote variable
   lastQuote = newQuote;

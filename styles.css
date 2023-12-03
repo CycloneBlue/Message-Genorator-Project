@@ -105,6 +105,10 @@ footer {
     font-size: 18px;
   }
 
+  h1 {
+    font-size: 21px; /* Adjust the font size for h1 on mobile devices */
+  }
+
   /* Adjust footer styles for mobile devices */
   footer {
     padding: 15px; /* Adjust padding for mobile devices */
