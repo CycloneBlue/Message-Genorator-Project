@@ -46,23 +46,29 @@ const quotes = [
   "The only code that is bug-free is no code at all. - Wayne Ratliff",
   "The best way to predict the future is to invent it. - Alan Kay",
   "Coding is not just code; it's solution to a problem. - Abhijit Naskar",
+  // 49 coding quotes
 ];
 
-let lastQuote = "";
+// Assuming you have a quotes array defined somewhere in your code
+
+let lastQuote = null; // Initialize lastQuote variable
 
 function generateQuote() {
-  // Shuffle the quotes array using Fisher-Yates algorithm
   for (let i = quotes.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
   }
+}
+
+function displayQuote() {
+  generateQuote(); // Shuffle the quotes array
 
   const newQuote = quotes[0];
 
   // Check if the new quote is the same as the last one
   if (newQuote === lastQuote) {
     // If it is the same, shuffle the array again
-    return generateQuote();
+    return displayQuote();
   }
 
   const quoteElement = document.getElementById("quote");
