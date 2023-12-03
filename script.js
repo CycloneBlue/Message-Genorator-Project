@@ -49,6 +49,8 @@ const quotes = [
   "Coding is not just code; it's solution to a problem. - Abhijit Naskar",
 ];
 
+let lastQuote = "";
+
 function generateQuote() {
   // Shuffle the quotes array using Fisher-Yates algorithm
   for (let i = quotes.length - 1; i > 0; i--) {
@@ -56,7 +58,18 @@ function generateQuote() {
     [quotes[i], quotes[j]] = [quotes[j], quotes[i]];
   }
 
+  const newQuote = quotes[0];
+
+  // Check if the new quote is the same as the last one
+  if (newQuote === lastQuote) {
+    // If it is the same, shuffle the array again
+    return generateQuote();
+  }
+
   const quoteElement = document.getElementById("quote");
-  quoteElement.innerText = quotes[0]; // Display the first quote after shuffling
+  quoteElement.innerText = newQuote; // Display the new quote
   quoteElement.style.fontSize = "24px"; // Change to your desired font size
+
+  // Update the lastQuote variable
+  lastQuote = newQuote;
 }
