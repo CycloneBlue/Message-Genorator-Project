@@ -49,7 +49,9 @@ const quotes = [
   // 49 coding quotes
 ];
 
-// Assuming you have a quotes array defined somewhere in your code
+const quote = [
+  // ... (your array of quotes)
+];
 
 let lastQuote = null; // Initialize lastQuote variable
 
@@ -65,10 +67,13 @@ function displayQuote() {
 
   const newQuote = quotes[0];
 
-  // Check if the new quote is the same as the last one
-  if (newQuote === lastQuote) {
-    // If it is the same, shuffle the array again
-    return displayQuote();
+  // Check if there was a previous quote
+  if (lastQuote !== null) {
+    // Check if the new quote is the same as the last one
+    if (newQuote === lastQuote) {
+      // If it is the same, shuffle the array again
+      return displayQuote();
+    }
   }
 
   const quoteElement = document.getElementById("quote");
