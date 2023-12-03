@@ -12,7 +12,6 @@ const quotes = [
   "The best way to predict the future is to invent it. - Alan Kay",
   "First, solve the problem. Then, write the code. - John Johnson",
   "Programming isn’t about what you know; it’s about what you can figure out. - Chris Pine",
-  "There are two ways of constructing a software design: One way is to make it so simple that there are obviously no deficiencies, and the other way is to make it so complicated that there are no obvious deficiencies. - C.A.R. Hoare",
   "Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. - Antoine de Saint-Exupéry",
   "Coding is not just code, that is a live thing to serve everyone! - Ming Song",
   "The only code that is easy to change is the code you write yourself. - Martin Fowler",
