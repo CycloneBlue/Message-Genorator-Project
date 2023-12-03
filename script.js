@@ -71,7 +71,12 @@ function generateQuote() {
 
   // Check if the screen width is less than or equal to 480 pixels (mobile devices)
   if (window.innerWidth <= 480) {
-    quoteElement.style.fontSize = "16px"; // Adjust font size for mobile devices
+    // Adjust font size based on the length of the quote
+    if (newQuote.split(" ").length > 16) {
+      quoteElement.style.fontSize = "14px"; // Reduce font size for longer quotes
+    } else {
+      quoteElement.style.fontSize = "16px"; // Default font size for shorter quotes
+    }
   } else {
     quoteElement.style.fontSize = "24px"; // Default font size for larger screens
   }
